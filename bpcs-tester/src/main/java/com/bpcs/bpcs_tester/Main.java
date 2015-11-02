@@ -11,8 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -23,6 +25,7 @@ import javafx.stage.Stage;
 
 import com.bpcs.bpcs_tester.controls.DateTimePicker;
 import com.bpcs.bpcs_tester.controls.InputDateControl;
+import com.bpcs.bpcs_tester.controls.LocationTextElement;
 import com.bpcs.bpcs_tester.controls.URLTextElement;
 
 public class Main extends Application {
@@ -132,15 +135,18 @@ public class Main extends Application {
 	
 		gridPane.add(pane1, 0, 0);
 		
-		TitledPane pane2 = createCommonPaneDate();
+		TitledPane pane2 = createPaneDate();
 		
 		gridPane.add(pane2, 1, 0);
-			
+		
+		TitledPane paneLocation = createPaneLocations();
+		gridPane.add(paneLocation, 0, 2, 2, 1 );
 		
 		return gridPane;
 	}
 
 	private TitledPane createCommonPane2() {
+		
 		TitledPane gridTitlePane = new TitledPane();
 		gridTitlePane.setText("Common2");
 		
@@ -159,7 +165,7 @@ public class Main extends Application {
 		return gridTitlePane;
 	}
 
-	private TitledPane createCommonPaneDate() {
+	private TitledPane createPaneDate() {
 		TitledPane gridTitlePane = new TitledPane();
 		gridTitlePane.setText("Date");
 		
@@ -167,27 +173,100 @@ public class Main extends Application {
 		
 	    final InputDateControl dateControl = new InputDateControl();
 	    final InputDateControl dateControl2 = new InputDateControl();
-		
-//	    final DateTimePicker dateControl2 = new DateTimePicker();
-//	    
-//	    dateControl2.valueProperty().addListener(t -> System.out.println(t));
-//
-//        // Time only
-//	    dateControl2.timeValueProperty().addListener(t -> System.out.println(t));
-//
-//        // DateAndTime
-//	    dateControl2.dateTimeValueProperty().addListener(t -> System.out.println(t));
-//	    
+
 		VBox vBox = new VBox();
 			
 		vBox.getChildren().add(dateControl.getGridPane());
 		vBox.getChildren().add(dateControl2.getGridPane());
-		//vBox.getChildren().add(dateControl2);
-		
+			
 		gridTitlePane.setContent(vBox);
 		
 		return gridTitlePane;
 	}
+	
+	private TitledPane createPaneLocations() {
+		TitledPane gridTitlePane = new TitledPane();
+		gridTitlePane.setText("Locations");
+		
+		gridTitlePane.setAlignment(Pos.TOP_LEFT);
+		
+		ToggleGroup group = new ToggleGroup();
+	    RadioButton button1 = new RadioButton("City");
+	    button1.setToggleGroup(group);
+	    button1.setSelected(true);
+	    RadioButton button2 = new RadioButton("Airport");
+	    button2.setToggleGroup(group);
+	    RadioButton button3 = new RadioButton("Filter");
+	    button3.setToggleGroup(group);
+		
+	    final LocationTextElement dateControl = new LocationTextElement();
+	    final LocationTextElement dateControl2 = new LocationTextElement();
+	    LocationTypeSelectElement locationTypeSelectElement = new LocationTypeSelectElement();
+	    TravelTextElement travelTextElement = new TravelTextElement();
+
+		VBox vBox = new VBox();
+		
+		vBox.getChildren().add(locationTypeSelectElement.getGridPane());
+		vBox.getChildren().add(dateControl.getGridPane());
+		vBox.getChildren().add(dateControl2.getGridPane());
+		vBox.getChildren().add(travelTextElement.getGridPane());
+			
+		gridTitlePane.setContent(vBox);
+		
+		return gridTitlePane;
+	}
+	
+	private class LocationTypeSelectElement {
+		private GridPane gridPane;
+		private RadioButton buttonCity ;
+		private RadioButton buttonApt ;
+		private RadioButton buttonFilter ;
+	  
+		
+		LocationTypeSelectElement() {
+			create();	
+		}
+		
+		void create() {
+			gridPane = new GridPane();
+			gridPane.setHgap(8);
+			gridPane.setVgap(8);
+			gridPane.setPadding(new Insets(5));
+			
+			ColumnConstraints cons1 = new ColumnConstraints();
+			cons1.setHgrow(Priority.NEVER);
+			
+			ColumnConstraints cons2 = new ColumnConstraints();
+			cons2.setHgrow(Priority.NEVER);
+			
+			
+			ColumnConstraints cons3 = new ColumnConstraints();
+			cons3.setHgrow(Priority.NEVER);
+			
+			
+			gridPane.getColumnConstraints().addAll(cons1, cons2, cons3);
+			
+			buttonCity = new RadioButton("City");
+			buttonApt = new RadioButton("Airport");
+			buttonFilter = new RadioButton("Filter");
+			ToggleGroup group = new ToggleGroup();
+			buttonCity.setToggleGroup(group);
+			buttonCity.setSelected(true);
+		    buttonApt.setToggleGroup(group);
+		    buttonFilter.setToggleGroup(group);
+									
+			gridPane.add(buttonCity, 0, 0);
+			gridPane.add(buttonApt, 1, 0);
+			gridPane.add(buttonFilter, 2, 0);
+		}
+
+		public GridPane getGridPane() {
+			return gridPane;
+		}
+
+	
+	}
+
 
 	private class OperatorTextElement {
 		
@@ -240,5 +319,67 @@ public class Main extends Application {
 		}
 		
 	}
+	
+	private class TravelTextElement {
+		
+		private GridPane gridPane;
+		private TextField supplier;
+		private TextField stations;
+		private TextField servcats;
+		
+		TravelTextElement() {
+			create();	
+		}
+		
+		void create() {
+			gridPane = new GridPane();
+			gridPane.setHgap(8);
+			gridPane.setVgap(8);
+			gridPane.setPadding(new Insets(5));
+			
+			ColumnConstraints cons1 = new ColumnConstraints();
+			cons1.setHgrow(Priority.NEVER);
+			
+			ColumnConstraints cons2 = new ColumnConstraints();
+			cons2.setHgrow(Priority.ALWAYS);
+			
+			
+			//gridPane.getColumnConstraints().addAll(cons1, cons2);
+			
+			Label label = new Label("Supplier");
+			label.setMinWidth(100);
+			supplier = new TextField();
+			supplier.setPrefWidth(150);
+			supplier.setMaxWidth(250);
+			supplier.setMinWidth(150);
+
+			Label label2 = new Label("Stations");
+			label2.setMinWidth(80);
+			stations = new TextField();
+			stations.setMinWidth(200);
+	
+
+			Label label3 = new Label("Servcat");
+			label3.setMinWidth(80);
+			servcats = new TextField();
+			servcats.setMinWidth(100);
+	
+			
+			gridPane.add(label, 0, 0);
+			gridPane.add(supplier, 1, 0);
+			gridPane.add(label2, 2, 0);
+			gridPane.add(stations, 3, 0);
+			gridPane.add(label3, 4, 0);
+			gridPane.add(servcats, 5, 0);
+			
+		}
+
+		public GridPane getGridPane() {
+			return gridPane;
+		}
+
+			
+	}
+
 
 }
