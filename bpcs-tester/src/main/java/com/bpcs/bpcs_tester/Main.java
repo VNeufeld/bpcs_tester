@@ -1,12 +1,15 @@
 package com.bpcs.bpcs_tester;
 
 import javafx.application.Application;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -14,10 +17,15 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -27,6 +35,7 @@ import com.bpcs.bpcs_tester.controls.DateTimePicker;
 import com.bpcs.bpcs_tester.controls.InputDateControl;
 import com.bpcs.bpcs_tester.controls.LocationTextElement;
 import com.bpcs.bpcs_tester.controls.URLTextElement;
+import com.bpcs.bpcs_tester.controls.LocationTextElement.LocationTextField;
 
 public class Main extends Application {
 
@@ -142,7 +151,42 @@ public class Main extends Application {
 		TitledPane paneLocation = createPaneLocations();
 		gridPane.add(paneLocation, 0, 2, 2, 1 );
 		
+		gridPane.add(createStartButtons(), 0, 3, 2, 1 );
+		
 		return gridPane;
+	}
+
+	private Node createStartButtons() {
+		ToggleButton toggle = new ToggleButton("Toggle color");
+		HBox hb = new HBox();
+		// hb.setAlignment(Pos.CENTER);
+		GridPane gridPane = new GridPane();
+		gridPane.setHgap(8);
+		gridPane.setVgap(8);
+		gridPane.setPadding(new Insets(5));
+		
+		Label labelUrl = new Label("Size");
+		//labelUrl.setMinWidth(100);
+		TextField pageSizeField = new TextField();
+
+		Button b = new Button("Start");
+		b.setMinWidth(50);
+		
+		gridPane.add(labelUrl, 0, 0);
+		gridPane.add(pageSizeField, 1, 0);
+		gridPane.add(b, 2, 0);
+		
+		hb.getChildren().add(gridPane);
+		
+		Background bb = new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY));
+//	     hb.backgroundProperty().bind(Bindings.when(toggle.selectedProperty())
+//	                .then(new Background(new BackgroundFill(Color.CORNFLOWERBLUE, CornerRadii.EMPTY, Insets.EMPTY)))
+//	                .otherwise(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY))));
+
+		
+		hb.setBackground(bb);
+		
+		return hb;
 	}
 
 	private TitledPane createCommonPane2() {
