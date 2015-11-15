@@ -1,5 +1,8 @@
 package com.bpcs.bpcs_tester.model;
 
-public class AdacModel {
+public enum AdacModel {
+	INSTANCE;
+
+	public Operator selectedOperator;
 
 }

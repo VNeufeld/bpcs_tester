@@ -1,7 +1,17 @@
 package com.bpcs.bpcs_tester;
 
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.bpcs.bpcs_tester.controls.InputDateControl;
+import com.bpcs.bpcs_tester.controls.LocationTextElement;
+import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
+import com.bpcs.bpcs_tester.controls.URLTextElement;
+import com.bpcs.bpcs_tester.model.Operator;
+import com.bpcs.bpcs_tester.util.ApplicationProperties;
+
 import javafx.application.Application;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -31,16 +41,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import com.bpcs.bpcs_tester.controls.DateTimePicker;
-import com.bpcs.bpcs_tester.controls.InputDateControl;
-import com.bpcs.bpcs_tester.controls.LocationTextElement;
-import com.bpcs.bpcs_tester.controls.URLTextElement;
-import com.bpcs.bpcs_tester.controls.LocationTextElement.LocationTextField;
-
 public class Main extends Application {
+	private static Logger logger = Logger.getLogger(Main.class);	
 
 	public static void main(String[] args) {
 		System.out.println("Start Hello World!");
+		logger.info(" Start ");
+		
 		Application.launch(args);
 
 
@@ -198,7 +205,7 @@ public class Main extends Application {
 		URLTextElement urlTextElement = new URLTextElement();
 		
 		
-		OperatorTextElement operatorTextElement = new OperatorTextElement();
+		OperatorSelectComboElement operatorTextElement = new OperatorSelectComboElement();
 		
 		VBox vBox = new VBox();
 			
@@ -312,57 +319,6 @@ public class Main extends Application {
 	}
 
 
-	private class OperatorTextElement {
-		
-		private GridPane gridPane;
-		private TextField operator;
-		
-		OperatorTextElement() {
-			create();	
-		}
-		
-		void create() {
-			gridPane = new GridPane();
-			gridPane.setHgap(8);
-			gridPane.setVgap(8);
-			gridPane.setPadding(new Insets(5));
-			
-			ColumnConstraints cons1 = new ColumnConstraints();
-			cons1.setHgrow(Priority.NEVER);
-			
-			ColumnConstraints cons2 = new ColumnConstraints();
-			cons2.setHgrow(Priority.ALWAYS);
-			
-			
-			gridPane.getColumnConstraints().addAll(cons1, cons2);
-			
-			Label label = new Label("Operator");
-			label.setMinWidth(100);
-			operator = new TextField();
-			operator.setPrefWidth(150);
-			operator.setMaxWidth(250);
-			operator.setMinWidth(150);
-			
-						
-//			Tooltip tt = new Tooltip();
-//			tt.setText("Server URL");
-//			tt.setFont(new Font("Arial", 22));
-							
-			gridPane.add(label, 0, 0);
-			//HBox hb = new HBox(urlTextField,b);
-			gridPane.add(operator, 1, 0);
-			
-		}
-
-		public GridPane getGridPane() {
-			return gridPane;
-		}
-
-		public TextField getUrlTextField() {
-			return operator;
-		}
-		
-	}
 	
 	private class TravelTextElement {
 		

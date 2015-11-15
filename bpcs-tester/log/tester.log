@@ -1,0 +1,242 @@
+15 Nov 2015 20:26:41,726 INFO  [Main]  Start 
+15 Nov 2015 20:26:47,174 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 20:26:50,237 INFO  [OperatorSelectComboElement] operatorText = BPCS
+15 Nov 2015 20:27:15,403 INFO  [OperatorSelectComboElement] operatorText = ADAC CH
+15 Nov 2015 20:27:17,235 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 20:31:09,958 INFO  [Main]  Start 
+15 Nov 2015 20:32:41,206 INFO  [Main]  Start 
+15 Nov 2015 20:32:44,738 INFO  [OperatorSelectComboElement] operatorText = ADAC CH
+15 Nov 2015 20:32:47,345 INFO  [OperatorSelectComboElement] operatorText = BPCS
+15 Nov 2015 20:32:49,720 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 20:32:53,984 INFO  [OperatorSelectComboElement] operatorText = BPCS
+15 Nov 2015 21:18:11,553 INFO  [Main]  Start 
+15 Nov 2015 21:18:11,590 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:18:11,593 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:18:42,655 INFO  [Main]  Start 
+15 Nov 2015 21:18:47,815 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:18:47,818 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:24:47,870 INFO  [Main]  Start 
+15 Nov 2015 21:24:50,324 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:24:50,328 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:27:33,345 INFO  [Main]  Start 
+15 Nov 2015 21:27:35,447 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:27:35,451 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:29:31,063 INFO  [Main]  Start 
+15 Nov 2015 21:29:32,915 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:29:32,918 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:32:58,198 INFO  [Main]  Start 
+15 Nov 2015 21:32:59,640 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:32:59,644 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:33:28,120 INFO  [Main]  Start 
+15 Nov 2015 21:33:32,622 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:33:32,628 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:37:19,485 INFO  [Main]  Start 
+15 Nov 2015 21:37:19,524 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:37:19,527 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:39:52,878 INFO  [Main]  Start 
+15 Nov 2015 21:39:52,916 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 21:39:52,917 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:39:52,918 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 21:39:52,922 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:39:52,922 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 21:40:53,735 INFO  [Main]  Start 
+15 Nov 2015 21:40:53,769 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 21:40:53,771 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:40:53,771 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 21:40:53,775 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:40:53,776 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 21:49:45,474 INFO  [Main]  Start 
+15 Nov 2015 21:49:45,511 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 21:49:45,512 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:49:45,512 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 21:49:45,515 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:49:45,515 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 21:52:05,566 INFO  [Main]  Start 
+15 Nov 2015 21:52:05,604 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 21:52:05,605 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:52:05,605 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 21:52:05,608 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:52:05,609 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 21:54:41,493 INFO  [Main]  Start 
+15 Nov 2015 21:54:41,531 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 21:54:41,532 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:54:41,532 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 21:54:41,536 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:54:41,536 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 21:56:50,688 INFO  [Main]  Start 
+15 Nov 2015 21:56:50,729 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 21:56:50,731 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 21:56:50,731 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 21:56:50,734 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 21:56:50,735 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 21:58:22,622 INFO  [Main]  Start 
+15 Nov 2015 21:58:22,656 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 21:58:22,657 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 21:58:22,658 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 21:58:22,659 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 21:58:22,661 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:00:16,890 INFO  [Main]  Start 
+15 Nov 2015 22:00:16,926 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:00:16,927 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:00:16,928 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:00:16,929 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:00:16,932 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:02:12,956 INFO  [Main]  Start 
+15 Nov 2015 22:02:12,992 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:02:12,994 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:02:12,996 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:02:12,996 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:02:12,999 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:03:20,362 INFO  [Main]  Start 
+15 Nov 2015 22:03:20,394 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:03:20,397 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:03:20,399 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:03:20,399 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:03:20,402 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:08:53,464 INFO  [Main]  Start 
+15 Nov 2015 22:08:53,500 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:08:53,501 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:08:53,502 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:08:53,503 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:08:53,506 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:11:14,635 INFO  [Main]  Start 
+15 Nov 2015 22:11:14,672 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:11:14,674 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:11:14,674 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:11:14,675 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:11:14,678 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:13:09,810 INFO  [Main]  Start 
+15 Nov 2015 22:13:09,844 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:13:09,845 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:13:09,846 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:13:09,846 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:13:09,849 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:15:34,386 INFO  [Main]  Start 
+15 Nov 2015 22:15:34,431 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:15:34,432 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:15:34,433 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:15:34,434 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:15:34,437 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:18:30,193 INFO  [Main]  Start 
+15 Nov 2015 22:18:30,232 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:18:30,233 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:18:30,235 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:18:30,236 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:18:30,238 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:18:59,833 INFO  [Main]  Start 
+15 Nov 2015 22:18:59,871 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:18:59,874 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:18:59,876 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:18:59,876 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:18:59,879 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:19:57,145 INFO  [Main]  Start 
+15 Nov 2015 22:19:57,181 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:19:57,182 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:19:57,183 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:19:57,184 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:19:57,187 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:21:50,457 INFO  [Main]  Start 
+15 Nov 2015 22:21:50,496 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:21:50,497 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:21:50,498 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:21:50,498 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:21:50,502 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:30:57,866 INFO  [Main]  Start 
+15 Nov 2015 22:30:57,900 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:30:57,902 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 22:30:57,903 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 22:30:57,907 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 22:30:57,907 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 22:31:13,685 INFO  [OperatorSelectComboElement] operatorText = CH
+15 Nov 2015 22:31:16,844 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 22:31:19,708 INFO  [OperatorSelectComboElement] operatorText = UK
+15 Nov 2015 22:34:52,015 INFO  [Main]  Start 
+15 Nov 2015 22:34:52,049 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:34:52,050 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 22:34:52,050 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 22:34:52,054 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 22:34:52,054 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 22:35:09,000 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 22:36:29,969 INFO  [Main]  Start 
+15 Nov 2015 22:36:29,997 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:36:29,998 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:36:29,999 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:36:30,000 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:36:30,003 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:36:33,155 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 22:36:49,742 INFO  [Main]  Start 
+15 Nov 2015 22:36:49,770 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:36:49,771 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:36:49,772 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:36:49,772 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:36:49,775 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:36:53,281 INFO  [OperatorSelectComboElement] operatorText = CH
+15 Nov 2015 22:37:00,485 INFO  [Main]  Start 
+15 Nov 2015 22:37:00,513 DEBUG [PropertiesConfiguration] FileName set to c:/temp/app.properties
+15 Nov 2015 22:37:00,516 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is c:/temp/app.properties
+15 Nov 2015 22:37:00,517 DEBUG [DefaultFileSystem] Could not locate file c:/temp/app.properties at null: unknown protocol: c
+15 Nov 2015 22:37:00,517 DEBUG [ConfigurationUtils] Loading configuration from the absolute path c:/temp/app.properties
+15 Nov 2015 22:37:00,520 DEBUG [PropertiesConfiguration] Base path set to file:///c:/temp/app.properties
+15 Nov 2015 22:45:49,856 INFO  [Main]  Start 
+15 Nov 2015 22:45:58,739 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:45:58,741 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 22:45:58,742 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 22:45:58,746 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 22:45:58,747 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 22:46:03,566 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:46:03,567 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 22:46:03,568 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is app.properties
+15 Nov 2015 22:46:03,571 DEBUG [DefaultFileSystem] Could not locate file app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 22:46:03,573 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\app.properties
+15 Nov 2015 22:46:16,218 INFO  [OperatorSelectComboElement] operatorText = UK
+15 Nov 2015 22:46:52,396 INFO  [Main]  Start 
+15 Nov 2015 22:46:55,958 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:46:55,958 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 22:46:55,964 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is app.properties
+15 Nov 2015 22:46:55,966 DEBUG [DefaultFileSystem] Could not locate file app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 22:46:55,967 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\app.properties
+15 Nov 2015 22:47:12,678 INFO  [OperatorSelectComboElement] operatorText = CH
+15 Nov 2015 22:47:52,247 INFO  [Main]  Start 
+15 Nov 2015 22:47:52,275 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:47:52,275 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 22:47:52,279 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is app.properties
+15 Nov 2015 22:47:52,280 DEBUG [DefaultFileSystem] Could not locate file app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 22:47:52,281 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\app.properties
+15 Nov 2015 22:47:55,109 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 22:50:16,617 INFO  [Main]  Start 
+15 Nov 2015 22:50:16,820 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:50:16,820 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 22:50:16,824 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is app.properties
+15 Nov 2015 22:50:16,825 DEBUG [DefaultFileSystem] Could not locate file app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 22:50:16,826 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\app.properties
+15 Nov 2015 22:50:20,812 INFO  [OperatorSelectComboElement] operatorText = CH
+15 Nov 2015 22:51:31,460 INFO  [Main]  Start 
+15 Nov 2015 22:51:31,644 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:51:31,645 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 22:51:31,645 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 22:51:31,648 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 22:51:31,648 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 22:51:31,663 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+15 Nov 2015 22:51:31,663 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 22:51:31,664 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+15 Nov 2015 22:51:31,664 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 22:51:31,664 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+15 Nov 2015 22:55:45,362 INFO  [Main]  Start 
+15 Nov 2015 22:55:45,564 DEBUG [PropertiesConfiguration] FileName set to app.properties
+15 Nov 2015 22:55:45,566 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is null, name is app.properties
+15 Nov 2015 22:55:45,567 DEBUG [DefaultFileSystem] Could not locate file app.properties at null: no protocol: app.properties
+15 Nov 2015 22:55:45,571 DEBUG [ConfigurationUtils] Loading configuration from the context classpath (app.properties)
+15 Nov 2015 22:55:45,572 DEBUG [PropertiesConfiguration] Base path set to file:///E:/Developer/repository/git/bpcs_tester/bpcs-tester/target/classes/app.properties
+15 Nov 2015 22:55:45,589 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+15 Nov 2015 22:55:45,589 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 22:55:45,589 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+15 Nov 2015 22:55:45,590 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 22:55:45,590 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+15 Nov 2015 22:55:48,362 INFO  [OperatorSelectComboElement] operatorText = DE
+15 Nov 2015 23:01:38,131 INFO  [Main]  Start 
+15 Nov 2015 23:01:38,312 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+15 Nov 2015 23:01:38,312 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+15 Nov 2015 23:01:38,316 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+15 Nov 2015 23:01:38,318 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+15 Nov 2015 23:01:38,318 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+15 Nov 2015 23:01:42,206 INFO  [OperatorSelectComboElement] operatorText = UK
