@@ -1,7 +1,15 @@
 package com.bpcs.bpcs_tester.controls;
 
-import java.time.LocalDate;
+import static java.time.temporal.ChronoField.HOUR_OF_DAY;
+import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.ResolverStyle;
+
+import com.bpcs.bpcs_tester.util.ApplicationProperties;
 import com.bpcs.bpcs_tester.util.Time24HoursValidator;
 
 import javafx.event.ActionEvent;
@@ -18,9 +26,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 
 public class InputDateControl {
+	private final String label;
 	
-	public InputDateControl() {
+	public InputDateControl(final String label) {
 		super();
+		this.label = label;
 		create();
 	}
 
@@ -29,6 +39,8 @@ public class InputDateControl {
 	private DatePicker dropOffDate;
 	
 	private void create() {
+		
+		
 		gridPane = new GridPane();
 		gridPane.setHgap(8);
 		gridPane.setVgap(8);
@@ -45,19 +57,42 @@ public class InputDateControl {
 	
 		gridPane.getColumnConstraints().addAll(cons1, cons2, cons3);
 
-		Label labelUrl = new Label("Pickup :");
+		Label labelUrl = new Label(label);
 		labelUrl.setMinWidth(60);
 		
 		gridPane.add(labelUrl, 0, 0);
 		
 		pickupDate = new DatePicker();
-		LocalDate localDate = LocalDate.of(2015,  11,  20);
+		
+		LocalDate saved = getPickupDateTime();
+
+		LocalDate localDate = saved;
 						
 		pickupDate.setValue(localDate);
 		pickupDate.setMinWidth(150);
 		
+		pickupDate.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+		         LocalDate date = pickupDate.getValue();
+		         ApplicationProperties.getInstance().setPickupDate(date);
+		         System.err.println("Selected date: " + date);
+				
+			}
+		 });
+		
+		//pickupDate.set
+		
 		TimeTextField timeText = new TimeTextField();
-		timeText.setText("10:00");
+		
+		DateTimeFormatter LOCAL_TIME = new DateTimeFormatterBuilder()
+                .appendValue(HOUR_OF_DAY, 2)
+                .appendLiteral(':')
+                .appendValue(MINUTE_OF_HOUR, 2).toFormatter();
+		
+		String s = "10:00";
+		
+		timeText.setText(s);
 		timeText.setMinWidth(60);
 		timeText.setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -72,6 +107,14 @@ public class InputDateControl {
 		
 		gridPane.add(pickupDate, 1, 0);
 		gridPane.add(timeText, 2, 0);
+	}
+
+	private LocalDate getPickupDateTime() {
+		LocalDate ldt = ApplicationProperties.getInstance().getPickupDate();
+		if ( ldt == null ) {
+			ldt = LocalDate.now(); 
+		}
+		return ldt;
 	}
 
 	public GridPane getGridPane() {

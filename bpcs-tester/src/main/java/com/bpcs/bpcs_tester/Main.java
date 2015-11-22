@@ -8,6 +8,7 @@ import com.bpcs.bpcs_tester.controls.InputDateControl;
 import com.bpcs.bpcs_tester.controls.LocationTextElement;
 import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
 import com.bpcs.bpcs_tester.controls.URLTextElement;
+import com.bpcs.bpcs_tester.controls.eventshandler.GetOfferEventHandler;
 import com.bpcs.bpcs_tester.model.Operator;
 import com.bpcs.bpcs_tester.util.ApplicationProperties;
 
@@ -160,6 +161,10 @@ public class Main extends Application {
 		
 		gridPane.add(createStartButtons(), 0, 3, 2, 1 );
 		
+		
+		gridPane.add(createResultTable(), 0,  4, 2, 1);
+		
+		
 		return gridPane;
 	}
 
@@ -178,6 +183,7 @@ public class Main extends Application {
 
 		Button b = new Button("Start");
 		b.setMinWidth(50);
+		b.setOnAction(new GetOfferEventHandler() );
 		
 		gridPane.add(labelUrl, 0, 0);
 		gridPane.add(pageSizeField, 1, 0);
@@ -222,8 +228,8 @@ public class Main extends Application {
 		
 		gridTitlePane.setAlignment(Pos.TOP_LEFT);
 		
-	    final InputDateControl dateControl = new InputDateControl();
-	    final InputDateControl dateControl2 = new InputDateControl();
+	    final InputDateControl dateControl = new InputDateControl("pickupDate");
+	    final InputDateControl dateControl2 = new InputDateControl("dropoffDate");
 
 		VBox vBox = new VBox();
 			
@@ -234,6 +240,22 @@ public class Main extends Application {
 		
 		return gridTitlePane;
 	}
+	
+	private TitledPane createResultTable() {
+		TitledPane gridTitlePane = new TitledPane();
+		gridTitlePane.setText("Result");
+		
+		gridTitlePane.setAlignment(Pos.TOP_LEFT);
+
+		VBox vBox = new VBox();
+		
+			
+			
+		gridTitlePane.setContent(vBox);
+		
+		return gridTitlePane;
+	}
+
 	
 	private TitledPane createPaneLocations() {
 		TitledPane gridTitlePane = new TitledPane();

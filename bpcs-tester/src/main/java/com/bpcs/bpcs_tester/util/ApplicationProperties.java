@@ -1,11 +1,16 @@
 package com.bpcs.bpcs_tester.util;
 
 import java.io.File;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.bpcs.bpcs_tester.model.Operator;
@@ -15,6 +20,8 @@ public class ApplicationProperties {
 
 	private PropertiesConfiguration config = null;
 	private static ApplicationProperties instance = null;
+	
+	
 	public static ApplicationProperties getInstance() {
 		if ( instance == null)
 			instance = new ApplicationProperties();
@@ -63,7 +70,46 @@ public class ApplicationProperties {
 		}
 		return operators;
 	}
+
+	public boolean isDummy() {
+		return true;
+	}
 	
+	public LocalDate getPickupDate() {
+		String prop = config.getString("pickupDate");
+		if ( StringUtils.isNotEmpty(prop)) {
+			try {
+				LocalDate t = LocalDate.parse(prop);
+				return t;
+			}
+			catch(DateTimeParseException dtm) {
+				logger.error("can't parse "+prop+ " to pickupDate");
+			}
+		}
+		return null;
+		
+	}
+	
+	public void setPickupDate(LocalDate date) {
+		String df = date.format(DateTimeFormatter.ISO_LOCAL_DATE);
+		config.setProperty("pickupDate",df);
+	}
+
+
+	public LocalDateTime getDropoffDate() {
+		String prop = config.getString("dropoffDate");
+		if ( StringUtils.isNotEmpty(prop)) {
+			try {
+				LocalDateTime t = LocalDateTime.parse(prop);
+				return t;
+			}
+			catch(DateTimeParseException dtm) {
+				logger.error("can't parse "+prop+ " to dropoffDate");
+			}
+		}
+		return null;
+		
+	}
 	
 
 }

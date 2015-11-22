@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.bpcs.bpcs_tester.model.AdacModel;
+import com.bpcs.bpcs_tester.model.ModelProvider;
 import com.bpcs.bpcs_tester.model.Operator;
 import com.bpcs.bpcs_tester.util.ApplicationProperties;
 
@@ -72,7 +72,7 @@ public class OperatorSelectComboElement {
 				operatorText = t1.getName();
 				logger.info("operatorText = " + operatorText);
 				ApplicationProperties.getInstance().setSelectedOperators(t1.getId());
-				AdacModel.INSTANCE.selectedOperator = t1;
+				ModelProvider.INSTANCE.selectedOperator = t1;
 
 			}
 		});
@@ -91,7 +91,7 @@ public class OperatorSelectComboElement {
 		}
 		if (selected_operator != null) {
 			cb.setValue(selected_operator);
-			AdacModel.INSTANCE.selectedOperator = selected_operator;
+			ModelProvider.INSTANCE.selectedOperator = selected_operator;
 		}
 
 	}

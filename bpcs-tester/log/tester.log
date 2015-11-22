@@ -240,3 +240,95 @@
 15 Nov 2015 23:01:38,318 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
 15 Nov 2015 23:01:38,318 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
 15 Nov 2015 23:01:42,206 INFO  [OperatorSelectComboElement] operatorText = UK
+22 Nov 2015 14:13:24,283 INFO  [Main]  Start 
+22 Nov 2015 14:13:24,465 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 14:13:24,465 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 14:13:24,469 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 14:13:24,469 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 14:13:24,470 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 14:18:48,900 INFO  [Main]  Start 
+22 Nov 2015 14:18:49,091 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 14:18:49,091 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 14:18:49,094 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 14:18:49,096 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 14:18:49,096 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 14:19:30,134 INFO  [Main]  Start 
+22 Nov 2015 14:19:30,325 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 14:19:30,326 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 14:19:30,329 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 14:19:30,330 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 14:19:30,331 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 22:33:09,543 INFO  [Main]  Start 
+22 Nov 2015 22:33:09,785 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 22:33:09,785 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 22:33:09,789 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 22:33:09,790 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 22:33:09,790 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 22:33:26,325 INFO  [Main]  Start 
+22 Nov 2015 22:33:26,544 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 22:33:26,544 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 22:33:26,548 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 22:33:26,549 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 22:33:26,550 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 22:36:58,203 INFO  [Main]  Start 
+22 Nov 2015 22:36:58,414 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 22:36:58,414 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 22:36:58,418 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 22:36:58,419 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 22:36:58,419 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 22:37:50,290 INFO  [Main]  Start 
+22 Nov 2015 22:37:50,487 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 22:37:50,488 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 22:37:50,491 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 22:37:50,492 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 22:37:50,492 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 22:57:23,540 INFO  [Main]  Start 
+22 Nov 2015 22:57:23,768 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 22:57:23,768 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 22:57:23,773 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 22:57:23,774 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 22:57:23,774 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 22:59:34,056 INFO  [Main]  Start 
+22 Nov 2015 22:59:34,275 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 22:59:34,275 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 22:59:34,283 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 22:59:34,284 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 22:59:34,284 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 23:03:19,708 INFO  [Main]  Start 
+22 Nov 2015 23:03:19,937 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 23:03:19,937 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 23:03:19,941 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 23:03:19,942 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 23:03:19,943 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 23:13:21,328 INFO  [Main]  Start 
+22 Nov 2015 23:13:21,529 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 23:13:21,529 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 23:13:21,534 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 23:13:21,535 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 23:13:21,535 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 23:14:10,839 INFO  [Main]  Start 
+22 Nov 2015 23:14:11,031 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 23:14:11,031 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 23:14:11,036 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 23:14:11,037 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 23:14:11,037 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 23:14:11,072 ERROR [ApplicationProperties] can't parse 2015-11-25 to pickupDate
+22 Nov 2015 23:14:11,088 ERROR [ApplicationProperties] can't parse 2015-11-25 to pickupDate
+22 Nov 2015 23:16:33,141 INFO  [Main]  Start 
+22 Nov 2015 23:16:33,332 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 23:16:33,332 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 23:16:33,337 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 23:16:33,338 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 23:16:33,339 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 23:16:56,471 INFO  [Main]  Start 
+22 Nov 2015 23:16:56,669 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 23:16:56,669 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 23:16:56,674 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 23:16:56,675 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 23:16:56,675 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+22 Nov 2015 23:18:01,569 INFO  [Main]  Start 
+22 Nov 2015 23:18:01,748 DEBUG [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+22 Nov 2015 23:18:01,748 DEBUG [PropertiesConfiguration] Base path set to C:\Users\Valeri
+22 Nov 2015 23:18:01,752 DEBUG [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+22 Nov 2015 23:18:01,753 DEBUG [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+22 Nov 2015 23:18:01,753 DEBUG [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
