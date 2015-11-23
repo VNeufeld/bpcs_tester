@@ -1,11 +1,15 @@
 package com.bpcs.bpcs_tester.controls.eventshandler;
 
+import com.bpcs.bpcs_tester.controls.ProgressDialog;
 import com.bpcs.bpcs_tester.model.ModelProvider;
 import com.bpcs.bpcs_tester.model.json.VehicleRequest;
 import com.bpcs.bpcs_tester.model.json.VehicleResponse;
 import com.bpcs.bpcs_tester.services.CreateVehicleRequestUtils;
+import com.bpcs.bpcs_tester.services.IService;
 import com.bpcs.bpcs_tester.services.JoiHttpServiceFactory;
+import com.bpcs.bpcs_tester.services.MyTask;
 import com.bpcs.bpcs_tester.services.VehicleHttpService;
+import com.bpcs.bpcs_tester.services.VehicleServiceImpl;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,14 +19,12 @@ public class GetOfferEventHandler implements EventHandler<ActionEvent>{
 	@Override
 	public void handle(ActionEvent event) {
 		
-		int pageSizeInt = (int)ModelProvider.INSTANCE.pageSize;
-		
-		VehicleRequest request = CreateVehicleRequestUtils.createVehicleRequest();
-
-		JoiHttpServiceFactory serviceFactory = new JoiHttpServiceFactory();
-		VehicleHttpService service = serviceFactory.getVehicleJoiService();
-		VehicleResponse response = service.getOffers(request, false, pageSizeInt);
-		
+		IService service = new VehicleServiceImpl();
+		ProgressDialog pd = new ProgressDialog();
+		MyTask task = new MyTask(service, null, pd);
+		task.execute();
+		System.out.println(" handle OK ");
+				
 	}
 
 }
