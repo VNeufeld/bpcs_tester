@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,11 +29,14 @@ public class ProgressDialog {
         dialogStage.initStyle(StageStyle.UTILITY);
         dialogStage.setResizable(false);
         dialogStage.initModality(Modality.APPLICATION_MODAL);
+        dialogStage.setTitle("Service");
 
         // PROGRESS BAR
         final Label label = new Label();
         label.setText("alerto");
-
+        final VBox vbb = new VBox();
+        vbb.setAlignment(Pos.CENTER);
+        label.setAlignment(Pos.CENTER);
         
         pb.setProgress(0.1);
         pin.setProgress(-1F);
@@ -41,8 +45,10 @@ public class ProgressDialog {
         hb.setSpacing(5);
         hb.setAlignment(Pos.CENTER);
         hb.getChildren().addAll(pb, pin);
+        
+        vbb.getChildren().addAll(label, hb);
 
-        Scene scene = new Scene(hb);
+        Scene scene = new Scene(vbb);
         dialogStage.setScene(scene);
     }
 

@@ -36,7 +36,8 @@ public class LocationTextElement {
 		gridPane.getColumnConstraints().addAll(cons1, cons2, cons3);
 		
 
-		Label labelUrl = new Label("Pickup");
+		String labelName = getLabel();
+		Label labelUrl = new Label(labelName);
 		labelUrl.setMinWidth(100);
 		locationTextField = new LocationTextField();
 
@@ -54,6 +55,10 @@ public class LocationTextElement {
 		gridPane.setMaxWidth(600);
 	}
 
+	protected String getLabel() {
+		return "";
+	}
+
 	public GridPane getGridPane() {
 		return gridPane;
 	}
@@ -68,18 +73,17 @@ public class LocationTextElement {
 
 				public void changed(ObservableValue<? extends Boolean> arg0,
 						Boolean oldPropertyValue, Boolean newPropertyValue) {
-					if (newPropertyValue) {
-						System.out.println("Textfield on focus");
-					} else {
-						System.out.println("Textfield out focus");
+					if (!newPropertyValue) {
+						saveLocation(getText());
 					}
-
 				}
+	
 			});
 			this.editableProperty().setValue(true);
 		}
 	}
-
+	protected void saveLocation(String text) {}
+	
 	public class NumberTextField extends TextField {
 
 		@Override

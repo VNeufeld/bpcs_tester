@@ -3,7 +3,10 @@ package com.bpcs.bpcs_tester.model;
 import java.net.URI;
 import java.util.Calendar;
 
+import com.bpcs.bpcs_tester.controls.TravelTextElement;
+import com.bpcs.bpcs_tester.model.json.LocationTypeRequest;
 import com.bpcs.bpcs_tester.model.json.OfferFilter;
+import com.bpcs.bpcs_tester.model.json.VehicleRequest;
 
 public enum ModelProvider {
 	INSTANCE;
@@ -38,6 +41,12 @@ public enum ModelProvider {
 	public String servcatFilter;
 
 	public String stationFilter;
+	
+	public LocationTypeRequest  locationTypeRequest;
+	
+	public TravelTextElement travelTextElement;
+	
+	public VehicleRequest vehicleRequest = new VehicleRequest();
 
 
 	

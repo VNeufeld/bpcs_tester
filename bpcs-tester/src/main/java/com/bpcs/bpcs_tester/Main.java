@@ -1,18 +1,8 @@
 package com.bpcs.bpcs_tester;
 
-import java.util.List;
-
-import org.apache.log4j.Logger;
-
-import com.bpcs.bpcs_tester.controls.InputDateControl;
-import com.bpcs.bpcs_tester.controls.LocationTextElement;
-import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
-import com.bpcs.bpcs_tester.controls.URLTextElement;
-import com.bpcs.bpcs_tester.controls.eventshandler.GetOfferEventHandler;
-import com.bpcs.bpcs_tester.model.Operator;
-import com.bpcs.bpcs_tester.util.ApplicationProperties;
-
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -28,6 +18,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Background;
@@ -41,6 +32,18 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import org.apache.log4j.Logger;
+
+import com.bpcs.bpcs_tester.controls.DropoffLocationText;
+import com.bpcs.bpcs_tester.controls.InputDateControl;
+import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
+import com.bpcs.bpcs_tester.controls.PickupLocationText;
+import com.bpcs.bpcs_tester.controls.TravelTextElement;
+import com.bpcs.bpcs_tester.controls.URLTextElement;
+import com.bpcs.bpcs_tester.controls.eventshandler.GetOfferEventHandler;
+import com.bpcs.bpcs_tester.model.ModelProvider;
+import com.bpcs.bpcs_tester.model.json.LocationTypeRequest;
 
 public class Main extends Application {
 	private static Logger logger = Logger.getLogger(Main.class);	
@@ -262,27 +265,16 @@ public class Main extends Application {
 		gridTitlePane.setText("Locations");
 		
 		gridTitlePane.setAlignment(Pos.TOP_LEFT);
-		
-		ToggleGroup group = new ToggleGroup();
-	    RadioButton button1 = new RadioButton("City");
-	    button1.setToggleGroup(group);
-	    button1.setSelected(true);
-	    RadioButton button2 = new RadioButton("Airport");
-	    button2.setToggleGroup(group);
-	    RadioButton button3 = new RadioButton("Filter");
-	    button3.setToggleGroup(group);
-		
-	    final LocationTextElement dateControl = new LocationTextElement();
-	    final LocationTextElement dateControl2 = new LocationTextElement();
-	    LocationTypeSelectElement locationTypeSelectElement = new LocationTypeSelectElement();
-	    TravelTextElement travelTextElement = new TravelTextElement();
 
 		VBox vBox = new VBox();
 		
-		vBox.getChildren().add(locationTypeSelectElement.getGridPane());
-		vBox.getChildren().add(dateControl.getGridPane());
-		vBox.getChildren().add(dateControl2.getGridPane());
-		vBox.getChildren().add(travelTextElement.getGridPane());
+		TravelTextElement tr  = new TravelTextElement();
+		ModelProvider.INSTANCE.travelTextElement = tr;
+		
+		vBox.getChildren().add(new LocationTypeSelectElement().getGridPane());
+		vBox.getChildren().add(new PickupLocationText().getGridPane());
+		vBox.getChildren().add(new DropoffLocationText().getGridPane());
+		vBox.getChildren().add(tr.getGridPane());
 			
 		gridTitlePane.setContent(vBox);
 		
@@ -291,10 +283,6 @@ public class Main extends Application {
 	
 	private class LocationTypeSelectElement {
 		private GridPane gridPane;
-		private RadioButton buttonCity ;
-		private RadioButton buttonApt ;
-		private RadioButton buttonFilter ;
-	  
 		
 		LocationTypeSelectElement() {
 			create();	
@@ -312,25 +300,39 @@ public class Main extends Application {
 			ColumnConstraints cons2 = new ColumnConstraints();
 			cons2.setHgrow(Priority.NEVER);
 			
-			
 			ColumnConstraints cons3 = new ColumnConstraints();
 			cons3.setHgrow(Priority.NEVER);
 			
-			
 			gridPane.getColumnConstraints().addAll(cons1, cons2, cons3);
-			
-			buttonCity = new RadioButton("City");
-			buttonApt = new RadioButton("Airport");
-			buttonFilter = new RadioButton("Filter");
+
 			ToggleGroup group = new ToggleGroup();
-			buttonCity.setToggleGroup(group);
-			buttonCity.setSelected(true);
+		    RadioButton buttonCity = new RadioButton(LocationTypeRequest.City.name());
+		    buttonCity.setToggleGroup(group);
+		    buttonCity.setSelected(true);
+		    RadioButton buttonApt = new RadioButton(LocationTypeRequest.Airport.name());
 		    buttonApt.setToggleGroup(group);
+		    RadioButton buttonFilter = new RadioButton(LocationTypeRequest.StationFilter.name());
 		    buttonFilter.setToggleGroup(group);
 									
 			gridPane.add(buttonCity, 0, 0);
 			gridPane.add(buttonApt, 1, 0);
 			gridPane.add(buttonFilter, 2, 0);
+			
+			ModelProvider.INSTANCE.locationTypeRequest = LocationTypeRequest.City;
+			
+			group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+		        @Override
+		        public void changed(ObservableValue<? extends Toggle> ov, Toggle t, Toggle t1) {
+
+		            RadioButton chk = (RadioButton)t1.getToggleGroup().getSelectedToggle(); // Cast object to radio button
+		            
+		            LocationTypeRequest txx = LocationTypeRequest.valueOf(chk.getText());
+		            System.out.println("Selected locationType  "+txx.name() + " code = " + txx.getOrdinal());
+		            
+		            ModelProvider.INSTANCE.locationTypeRequest = txx;
+		           		            
+		        }
+		    });
 		}
 
 		public GridPane getGridPane() {
@@ -342,66 +344,5 @@ public class Main extends Application {
 
 
 	
-	private class TravelTextElement {
-		
-		private GridPane gridPane;
-		private TextField supplier;
-		private TextField stations;
-		private TextField servcats;
-		
-		TravelTextElement() {
-			create();	
-		}
-		
-		void create() {
-			gridPane = new GridPane();
-			gridPane.setHgap(8);
-			gridPane.setVgap(8);
-			gridPane.setPadding(new Insets(5));
-			
-			ColumnConstraints cons1 = new ColumnConstraints();
-			cons1.setHgrow(Priority.NEVER);
-			
-			ColumnConstraints cons2 = new ColumnConstraints();
-			cons2.setHgrow(Priority.ALWAYS);
-			
-			
-			//gridPane.getColumnConstraints().addAll(cons1, cons2);
-			
-			Label label = new Label("Supplier");
-			label.setMinWidth(100);
-			supplier = new TextField();
-			supplier.setPrefWidth(150);
-			supplier.setMaxWidth(250);
-			supplier.setMinWidth(150);
-
-			Label label2 = new Label("Stations");
-			label2.setMinWidth(80);
-			stations = new TextField();
-			stations.setMinWidth(200);
-	
-
-			Label label3 = new Label("Servcat");
-			label3.setMinWidth(80);
-			servcats = new TextField();
-			servcats.setMinWidth(100);
-	
-			
-			gridPane.add(label, 0, 0);
-			gridPane.add(supplier, 1, 0);
-			gridPane.add(label2, 2, 0);
-			gridPane.add(stations, 3, 0);
-			gridPane.add(label3, 4, 0);
-			gridPane.add(servcats, 5, 0);
-			
-		}
-
-		public GridPane getGridPane() {
-			return gridPane;
-		}
-
-			
-	}
-
 
 }
