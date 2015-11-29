@@ -35,9 +35,11 @@ import javafx.stage.Stage;
 
 import org.apache.log4j.Logger;
 
+import com.bpcs.bpcs_tester.controls.DropoffDateControl;
 import com.bpcs.bpcs_tester.controls.DropoffLocationText;
 import com.bpcs.bpcs_tester.controls.InputDateControl;
 import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
+import com.bpcs.bpcs_tester.controls.PickupDateControl;
 import com.bpcs.bpcs_tester.controls.PickupLocationText;
 import com.bpcs.bpcs_tester.controls.TravelTextElement;
 import com.bpcs.bpcs_tester.controls.URLTextElement;
@@ -231,8 +233,8 @@ public class Main extends Application {
 		
 		gridTitlePane.setAlignment(Pos.TOP_LEFT);
 		
-	    final InputDateControl dateControl = new InputDateControl("pickupDate");
-	    final InputDateControl dateControl2 = new InputDateControl("dropoffDate");
+	    final PickupDateControl dateControl = new PickupDateControl();
+	    final DropoffDateControl dateControl2 = new DropoffDateControl();
 
 		VBox vBox = new VBox();
 			

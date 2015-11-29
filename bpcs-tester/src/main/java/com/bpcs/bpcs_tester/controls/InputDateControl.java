@@ -1,128 +1,83 @@
 package com.bpcs.bpcs_tester.controls;
 
-import static java.time.temporal.ChronoField.HOUR_OF_DAY;
-import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.ResolverStyle;
 
-import com.bpcs.bpcs_tester.util.ApplicationProperties;
 import com.bpcs.bpcs_tester.util.Time24HoursValidator;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 
-public class InputDateControl {
+public class InputDateControl extends BaseGridControl{
 	private final String label;
+	private final int labelWidth = 90; 
+	private final int timeTextWidth = 60; 
+	private final int datePickerWidth = 150; 
+	protected DatePicker datePicker;
+	protected TimeTextField timeText;
 	
 	public InputDateControl(final String label) {
 		super();
 		this.label = label;
-		create();
+		createDateControl();
 	}
-
-	private GridPane gridPane;
-	private DatePicker pickupDate;
-	private DatePicker dropOffDate;
 	
-	private void create() {
-		
-		
-		gridPane = new GridPane();
-		gridPane.setHgap(8);
-		gridPane.setVgap(8);
-		gridPane.setPadding(new Insets(5));
+	private void createDateControl() {
+		createLabel(0,0); 
 
-		ColumnConstraints cons1 = new ColumnConstraints();
-		cons1.setHgrow(Priority.NEVER);
-
-		ColumnConstraints cons2 = new ColumnConstraints();
-		cons2.setHgrow(Priority.ALWAYS);
-
-		ColumnConstraints cons3 = new ColumnConstraints();
-		cons3.setHgrow(Priority.ALWAYS);
-	
-		gridPane.getColumnConstraints().addAll(cons1, cons2, cons3);
-
-		Label labelUrl = new Label(label);
-		labelUrl.setMinWidth(60);
+		datePicker = createDatePicker(datePickerWidth,1, 0);
+		LocalDate saved = getPropertyDateTime();
+		datePicker.setValue(saved);
 		
-		gridPane.add(labelUrl, 0, 0);
+		timeText = createTimeTextField(timeTextWidth, 2,0);
 		
-		pickupDate = new DatePicker();
-		
-		LocalDate saved = getPickupDateTime();
-
-		LocalDate localDate = saved;
-						
-		pickupDate.setValue(localDate);
-		pickupDate.setMinWidth(150);
-		
-		pickupDate.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-		         LocalDate date = pickupDate.getValue();
-		         ApplicationProperties.getInstance().setPickupDate(date);
-		         System.err.println("Selected date: " + date);
-				
-			}
-		 });
-		
-		//pickupDate.set
-		
-		TimeTextField timeText = new TimeTextField();
-		
-		DateTimeFormatter LOCAL_TIME = new DateTimeFormatterBuilder()
-                .appendValue(HOUR_OF_DAY, 2)
-                .appendLiteral(':')
-                .appendValue(MINUTE_OF_HOUR, 2).toFormatter();
+//		DateTimeFormatter LOCAL_TIME = new DateTimeFormatterBuilder()
+//                .appendValue(HOUR_OF_DAY, 2)
+//                .appendLiteral(':')
+//                .appendValue(MINUTE_OF_HOUR, 2).toFormatter();
 		
 		String s = "10:00";
-		
 		timeText.setText(s);
-		timeText.setMinWidth(60);
-		timeText.setOnAction(new EventHandler<ActionEvent>() {
-			
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println(" event "+event.toString());
-				
-				
-			}
-		});
-			
-		
-		gridPane.add(pickupDate, 1, 0);
-		gridPane.add(timeText, 2, 0);
 	}
 
-	private LocalDate getPickupDateTime() {
-		LocalDate ldt = ApplicationProperties.getInstance().getPickupDate();
-		if ( ldt == null ) {
-			ldt = LocalDate.now(); 
-		}
-		return ldt;
+	private TimeTextField createTimeTextField(int width, int row, int col) {
+		TimeTextField ttf = new TimeTextField();
+		EventHandler<ActionEvent> eventHandler = getTimeEventAction();
+		if ( eventHandler != null)
+			ttf.setOnAction(eventHandler);
+		ttf.setMinWidth(width);
+		add(ttf, row, col);
+		return ttf;
 	}
 
-	public GridPane getGridPane() {
-		return gridPane;
+	private DatePicker createDatePicker(int datePickerWidth,int row, int col) {
+		DatePicker dp = new DatePicker();
+		dp.setMinWidth(datePickerWidth);
+		EventHandler<ActionEvent> eventHandler = getEventAction();
+		if ( eventHandler != null)
+			dp.setOnAction(eventHandler);
+		add(dp, row, col);
+		return dp;
 	}
 
-	public DatePicker getPickupDate() {
-		return pickupDate;
+	protected EventHandler<ActionEvent> getEventAction() {
+		return null;
+	}
+	protected EventHandler<ActionEvent> getTimeEventAction() {
+		return null;
+	}
+
+	protected void createLabel(int row, int col) {
+		Label labelUrl = new Label(label);
+		labelUrl.setMinWidth(labelWidth);
+		add(labelUrl, row, col);
+	}
+
+	protected LocalDate getPropertyDateTime() {
+		return LocalDate.now(); 
 	}
 	
 	public class TimeTextField extends TextField {
@@ -130,7 +85,6 @@ public class InputDateControl {
 		public TimeTextField() {
 			super();
 			this.setOnKeyPressed(new EventHandler<KeyEvent>() {
-
 				@Override
 				public void handle(KeyEvent  ke) {
 					  System.out.println("Key Pressed: " + ke.getText());
