@@ -3,9 +3,11 @@ package com.bpcs.bpcs_tester.util;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -17,6 +19,10 @@ import com.bpcs.bpcs_tester.model.Operator;
 
 public class ApplicationProperties {
 	private static Logger logger = Logger.getLogger(ApplicationProperties.class);	
+	private final String  PICKUP_DATE = "pickupDate"; 
+	private final String  PICKUP_TIME = "pickupTime"; 
+	private final String  DROPOFF_DATE = "dropoffDate"; 
+	private final String  DROPOFF_TIME = "dropoffTime"; 
 
 	private PropertiesConfiguration config = null;
 	private static ApplicationProperties instance = null;
@@ -76,40 +82,87 @@ public class ApplicationProperties {
 	}
 	
 	public LocalDate getPickupDate() {
-		String prop = config.getString("pickupDate");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String prop = config.getString(PICKUP_DATE);
+		if ( StringUtils.isEmpty(prop)) {
+			//Calendar cal = Calendar.getInstance();
+			//LocalDateTime ldt = LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1,  cal.get(Calendar.DAY_OF_MONTH),10,0);
+			LocalDateTime ldt = LocalDateTime.now();
+			prop = ldt.format(formatter);
+			config.setProperty(PICKUP_DATE, prop);
+		}
+		
 		if ( StringUtils.isNotEmpty(prop)) {
 			try {
-				LocalDate t = LocalDate.parse(prop);
-				return t;
+				LocalDate ldt = LocalDate.parse(prop,formatter);
+				return ldt;
 			}
 			catch(DateTimeParseException dtm) {
 				logger.error("can't parse "+prop+ " to pickupDate");
+				
 			}
 		}
-		return null;
+		return LocalDate.now();
 		
 	}
 	
+	public String getPickupTime() {
+		String prop = config.getString(PICKUP_TIME);
+		if ( StringUtils.isEmpty(prop)) {
+			prop = "10:10";
+			config.setProperty(PICKUP_TIME, prop);
+		}
+		return prop;
+		
+	}
+	
+	
 	public void setPickupDate(LocalDate date) {
-		String df = date.format(DateTimeFormatter.ISO_LOCAL_DATE);
-		config.setProperty("pickupDate",df);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String df = date.format(formatter);
+		config.setProperty(PICKUP_DATE,df);
+	}
+	public void setPickupTime(String time) {
+		config.setProperty(PICKUP_TIME, time);
 	}
 
 
-	public LocalDateTime getDropoffDate() {
-		String prop = config.getString("dropoffDate");
+	public LocalDate getDropoffDate() {
+		String prop = config.getString(DROPOFF_DATE);
+		if ( StringUtils.isEmpty(prop)) {
+			LocalDateTime ldt = LocalDateTime.now();
+			prop = ldt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+			config.setProperty(DROPOFF_DATE, prop);
+		}
+		
 		if ( StringUtils.isNotEmpty(prop)) {
 			try {
-				LocalDateTime t = LocalDateTime.parse(prop);
-				return t;
+				return LocalDate.parse(prop);
 			}
 			catch(DateTimeParseException dtm) {
 				logger.error("can't parse "+prop+ " to dropoffDate");
 			}
 		}
-		return null;
+		return LocalDate.now();
 		
 	}
-	
+	public String getDropoffTime() {
+		String prop = config.getString(DROPOFF_TIME);
+		if ( StringUtils.isEmpty(prop)) {
+			prop = "10:10";
+			config.setProperty(DROPOFF_TIME, prop);
+		}
+		return prop;
+		
+	}
+
+	public void setDropoffDate(LocalDate date) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String df = date.format(formatter);
+		config.setProperty(DROPOFF_DATE,df);
+	}
+	public void setDropoffTime(String time) {
+		config.setProperty(DROPOFF_TIME, time);
+	}
 
 }

@@ -15,11 +15,15 @@ public class DropoffDateControl extends InputDateControl {
 
 	@Override
 	protected LocalDate getPropertyDateTime() {
-		LocalDate ldt = ApplicationProperties.getInstance().getPickupDate();
+		LocalDate ldt = ApplicationProperties.getInstance().getDropoffDate();
 		if (ldt == null) {
 			ldt = LocalDate.now();
 		}
 		return ldt;
+	}
+	@Override
+	protected String getPropertyTime() {
+		return ApplicationProperties.getInstance().getDropoffTime();
 	}
 
 	@Override
@@ -28,8 +32,8 @@ public class DropoffDateControl extends InputDateControl {
 			@Override
 			public void handle(ActionEvent event) {
 				LocalDate date = datePicker.getValue();
-				ApplicationProperties.getInstance().setPickupDate(date);
-				System.err.println("Selected Dropoff Date: " + date);
+				ApplicationProperties.getInstance().setDropoffDate(date);
+				System.out.println("Selected Dropoff Date: " + date);
 
 			}
 		};
@@ -37,15 +41,10 @@ public class DropoffDateControl extends InputDateControl {
 	}
 
 	@Override
-	protected EventHandler<ActionEvent> getTimeEventAction() {
-		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				//ApplicationProperties.getInstance().setPickupDate(date);
-				System.out.println(" Dropoff Time : "+event.toString());
-			}
-		};
-		return event;
+	protected void saveTime(String text) {
+		System.out.println("Selected Dropoff Time: " + text);
+		ApplicationProperties.getInstance().setDropoffTime(text);
+		
 	}
-	
+
 }

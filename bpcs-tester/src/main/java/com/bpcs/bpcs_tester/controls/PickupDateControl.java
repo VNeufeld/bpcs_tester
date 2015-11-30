@@ -1,7 +1,10 @@
 package com.bpcs.bpcs_tester.controls;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
+import com.bpcs.bpcs_tester.model.ModelProvider;
 import com.bpcs.bpcs_tester.util.ApplicationProperties;
 
 import javafx.event.ActionEvent;
@@ -21,6 +24,11 @@ public class PickupDateControl extends InputDateControl {
 		}
 		return ldt;
 	}
+	@Override
+	protected String getPropertyTime() {
+		return ApplicationProperties.getInstance().getPickupTime();
+	}
+
 
 	@Override
 	protected EventHandler<ActionEvent> getEventAction() {
@@ -29,7 +37,10 @@ public class PickupDateControl extends InputDateControl {
 			public void handle(ActionEvent event) {
 				LocalDate date = datePicker.getValue();
 				ApplicationProperties.getInstance().setPickupDate(date);
-				System.err.println("Selected Pickup Date: " + date);
+				System.out.println("Selected Pickup Date: " + date);
+				
+				ModelProvider.INSTANCE.pickupDateTimex = 
+						LocalDateTime.of(date.getYear(), date.getMonth(), date.getDayOfMonth(),ModelProvider.INSTANCE.pickupDateTimex.getHour(), ModelProvider.INSTANCE.pickupDateTimex.getMinute());
 
 			}
 		};
@@ -37,15 +48,18 @@ public class PickupDateControl extends InputDateControl {
 	}
 
 	@Override
-	protected EventHandler<ActionEvent> getTimeEventAction() {
-		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				//ApplicationProperties.getInstance().setPickupDate(date);
-				System.out.println(" PickupTime : "+event.toString());
-			}
-		};
-		return event;
+	protected void saveTime(String text) {
+		System.out.println("Selected Pickup Time: " + text);
+		ApplicationProperties.getInstance().setPickupTime(text);
+		LocalTime lt = LocalTime.parse(text);
+		ModelProvider.INSTANCE.pickupDateTimex = 
+				LocalDateTime.of(ModelProvider.INSTANCE.pickupDateTimex.getYear(), 
+						ModelProvider.INSTANCE.pickupDateTimex.getMonth(), 
+						ModelProvider.INSTANCE.pickupDateTimex.getDayOfMonth(),
+						lt.getHour(), 
+						lt.getMinute());
+		
 	}
+
 	
 }

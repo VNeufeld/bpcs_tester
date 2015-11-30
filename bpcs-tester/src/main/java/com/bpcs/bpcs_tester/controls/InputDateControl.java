@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import com.bpcs.bpcs_tester.util.Time24HoursValidator;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.DatePicker;
@@ -39,15 +41,16 @@ public class InputDateControl extends BaseGridControl{
 //                .appendLiteral(':')
 //                .appendValue(MINUTE_OF_HOUR, 2).toFormatter();
 		
-		String s = "10:00";
+		String s = getPropertyTime();
 		timeText.setText(s);
+	}
+
+	protected String getPropertyTime() {
+		return "10:15";
 	}
 
 	private TimeTextField createTimeTextField(int width, int row, int col) {
 		TimeTextField ttf = new TimeTextField();
-		EventHandler<ActionEvent> eventHandler = getTimeEventAction();
-		if ( eventHandler != null)
-			ttf.setOnAction(eventHandler);
 		ttf.setMinWidth(width);
 		add(ttf, row, col);
 		return ttf;
@@ -66,9 +69,6 @@ public class InputDateControl extends BaseGridControl{
 	protected EventHandler<ActionEvent> getEventAction() {
 		return null;
 	}
-	protected EventHandler<ActionEvent> getTimeEventAction() {
-		return null;
-	}
 
 	protected void createLabel(int row, int col) {
 		Label labelUrl = new Label(label);
@@ -79,7 +79,10 @@ public class InputDateControl extends BaseGridControl{
 	protected LocalDate getPropertyDateTime() {
 		return LocalDate.now(); 
 	}
-	
+	protected void saveTime(String text) {
+		
+	}
+
 	public class TimeTextField extends TextField {
 		
 		public TimeTextField() {
@@ -87,40 +90,46 @@ public class InputDateControl extends BaseGridControl{
 			this.setOnKeyPressed(new EventHandler<KeyEvent>() {
 				@Override
 				public void handle(KeyEvent  ke) {
-					  System.out.println("Key Pressed: " + ke.getText());
 					    String text = ke.getCharacter();
-					    if ( text.length() > 0) {
-							char c = text.charAt(0);
-							System.out.println("c="+c+ " ci = "+(int)c);
-							System.out.println("Answer:"+Integer.toHexString(c));
-					    }
 				}
 				
 			});
+			this.focusedProperty().addListener(new ChangeListener<Boolean>() {
+
+				public void changed(ObservableValue<? extends Boolean> arg0,
+						Boolean oldPropertyValue, Boolean newPropertyValue) {
+					if (!newPropertyValue) {
+						saveTime(getText());
+					}
+				}
+
+	
+			});
+			
 		}
 
 		Time24HoursValidator thvalHoursValidator = new Time24HoursValidator();
 
-		@Override
-		public void replaceText(int start, int end, String text) {
-			if ( text.length() > 0) {
-				char c = text.charAt(0);
-				System.out.println("c="+c+ " ci = "+(int)c);
-				System.out.println("Answer:"+Integer.toHexString(c));
-			}
-			if ((text.matches("[0-9]*") || text.equals(":") ) ) {
-				super.replaceText(start, end, text);
-			}
-		}
-
-		@Override
-		public void replaceSelection(String text) {
-			System.out.println(" selection : " + text + " v: "+this.getText());
-//			if (thvalHoursValidator.validate(text)) {
-//				super.replaceSelection(text);
+//		@Override
+//		public void replaceText(int start, int end, String text) {
+//			if ( text.length() > 0) {
+//				char c = text.charAt(0);
+//				System.out.println("c="+c+ " ci = "+(int)c);
+//				System.out.println("Answer:"+Integer.toHexString(c));
 //			}
-			super.replaceSelection(text);
-		}
+//			if ((text.matches("[0-9]*") || text.equals(":") ) ) {
+//				super.replaceText(start, end, text);
+//			}
+//		}
+//
+//		@Override
+//		public void replaceSelection(String text) {
+//			System.out.println(" selection : " + text + " v: "+this.getText());
+////			if (thvalHoursValidator.validate(text)) {
+////				super.replaceSelection(text);
+////			}
+//			super.replaceSelection(text);
+//		}
 
 	}
 

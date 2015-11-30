@@ -1,6 +1,7 @@
 package com.bpcs.bpcs_tester.model;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 import com.bpcs.bpcs_tester.controls.TravelTextElement;
@@ -33,6 +34,8 @@ public enum ModelProvider {
 	
 	public Calendar pickupDateTime;
 	public Calendar dropoffDateTime;
+	
+	public LocalDateTime pickupDateTimex = LocalDateTime.now();
 	
 	public String languageCode;
 
