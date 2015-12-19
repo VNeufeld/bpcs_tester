@@ -1,10 +1,16 @@
 package com.bpcs.bpcs_tester.controls;
 
+import org.apache.log4j.Logger;
+
+import com.bpcs.bpcs_tester.services.JsonUtils;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TextField;
 
-public class BasicTextField extends TextField {
+public abstract class BasicTextField extends TextField {
+	protected Logger logger = Logger.getLogger(getClass());
+
 	public BasicTextField() {
 		this.setPrefWidth(150);
 		this.setMaxWidth(250);
@@ -13,15 +19,15 @@ public class BasicTextField extends TextField {
 
 			public void changed(ObservableValue<? extends Boolean> arg0,
 					Boolean oldPropertyValue, Boolean newPropertyValue) {
-				if (newPropertyValue) {
-					System.out.println("Textfield on focus");
-				} else {
-					System.out.println("Textfield out focus");
+				if (!newPropertyValue) {
+					saveLocation(getText());
 				}
 
 			}
 		});
 		this.editableProperty().setValue(true);
 	}
+
+	protected abstract void saveLocation(String text);
 
 }

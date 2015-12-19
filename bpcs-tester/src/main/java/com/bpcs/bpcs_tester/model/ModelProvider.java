@@ -32,10 +32,8 @@ public enum ModelProvider {
 	public String airport;
 	public String dropoffAirport;
 	
-	public Calendar pickupDateTime;
-	public Calendar dropoffDateTime;
-	
-	public LocalDateTime pickupDateTimex = LocalDateTime.now();
+	public LocalDateTime pickupDateTime = LocalDateTime.now();
+	public LocalDateTime dropoffDateTime = LocalDateTime.now();
 	
 	public String languageCode;
 

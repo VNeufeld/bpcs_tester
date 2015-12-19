@@ -12,22 +12,16 @@ public class XmlUtils {
 
 	public String readResource(String file) {
 		
-		//String file = "/resources/GetCarsRequest/GetCarsRequest.xml";
-		// InputStream stream =
-		// Class.class.getClassLoader().getResourceAsStream("/GetCarsRequest/GetCarsRequest.xml");
-		InputStream is = this.getClass().getClassLoader()
-				.getResourceAsStream(file);
-
-		StringWriter writer = new StringWriter();
 
 		try {
+			InputStream is = this.getClass().getClassLoader()
+					.getResourceAsStream(file);
+			StringWriter writer = new StringWriter();
 			IOUtils.copy(is, writer, "utf-8");
 			String result = writer.toString();
 			System.out.println("result = " + result);
 			return result;
-
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

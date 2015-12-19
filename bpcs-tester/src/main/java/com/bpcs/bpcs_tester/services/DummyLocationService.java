@@ -30,10 +30,10 @@ public class DummyLocationService extends AbstractJoiService implements ILocatio
 			String response = null;
 			// dummy
 			if ( filter == HitType.COUNTRY) {
-				response = JsonUtils.createDummyResponse("DummyLocationSearchCountries.json");
+				response = new JsonUtils().createDummyResponse("DummyLocationSearchCountries.json");
 			}
 			else
-				response = JsonUtils.createDummyResponse("DummyLocationSearchResult.json");
+				response = new JsonUtils().createDummyResponse("DummyLocationSearchResult.json");
 			logger.info("dummy response = "+response);
 			
 			return JsonUtils.createResponseClassFromJson(response, LocationSearchResult.class);

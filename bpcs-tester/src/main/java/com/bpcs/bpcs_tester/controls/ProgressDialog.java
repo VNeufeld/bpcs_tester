@@ -5,6 +5,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import org.apache.log4j.Logger;
+
 import com.bpcs.bpcs_tester.model.json.Response;
 import com.bpcs.bpcs_tester.services.MyTask;
 
@@ -20,19 +22,24 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class ProgressDialog {
+
+	private Logger logger = Logger.getLogger(getClass());
+	
     private final Stage dialogStage;
     private final ProgressBar pb = new ProgressBar();
     private final ProgressIndicator pin = new ProgressIndicator();
+    
+    final Label label ;
 
     public ProgressDialog() {
         dialogStage = new Stage();
         dialogStage.initStyle(StageStyle.UTILITY);
-        dialogStage.setResizable(false);
+        dialogStage.setResizable(true);
         dialogStage.initModality(Modality.APPLICATION_MODAL);
         dialogStage.setTitle("Service");
 
         // PROGRESS BAR
-        final Label label = new Label();
+        label = new Label();
         label.setText("alerto");
         final VBox vbb = new VBox();
         vbb.setAlignment(Pos.CENTER);
@@ -58,13 +65,24 @@ public class ProgressDialog {
         pb.progressProperty().bind(task.progressProperty());
         pin.progressProperty().bind(task.progressProperty());
         dialogStage.show();
-        Future<Response> future = executorService.submit(task);
-
-        //dialogStage.close();
+        try {
+        	executorService.submit(task);
+        }
+        catch(Exception err) {
+        	logger.error(err.getMessage(),err);
+        }
+        finally {
+            executorService.shutdown();
+		}
         
     }
 
     public Stage getDialogStage() {
         return dialogStage;
     }
+    
+    public void setErrorText(final String text)  {
+    	label.setText(text);
+    }
+    
 }

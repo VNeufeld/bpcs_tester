@@ -1,7 +1,7 @@
 package com.bpcs.bpcs_tester.services;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -11,6 +11,7 @@ import com.bpcs.bpcs_tester.model.json.Administration;
 import com.bpcs.bpcs_tester.model.json.Agency;
 import com.bpcs.bpcs_tester.model.json.DayAndHour;
 import com.bpcs.bpcs_tester.model.json.Location;
+import com.bpcs.bpcs_tester.model.json.LocationTypeRequest;
 import com.bpcs.bpcs_tester.model.json.OfferFilter;
 import com.bpcs.bpcs_tester.model.json.Station;
 import com.bpcs.bpcs_tester.model.json.TravelInformation;
@@ -41,39 +42,14 @@ public class CreateVehicleRequestUtils {
 		VehicleRequest request = new VehicleRequest();
 		TravelInformation ti = new TravelInformation();
 		
-		
-
-		Location pickUpLocation = new Location();
-		Location dropOffLocation = new Location();
-
-		String aptCode = StringUtils.trimToEmpty(ModelProvider.INSTANCE.airport);
-		String dropOffAptCode = StringUtils.trimToEmpty(ModelProvider.INSTANCE.dropoffAirport);
-		
-		long cityId = ModelProvider.INSTANCE.cityId;
-		long dropoffCityId = ModelProvider.INSTANCE.dropoffCityId;
-		
-		boolean locationExist = false;
-		if (cityId > 0 ) {
-			pickUpLocation.setCityId(cityId);
-		}
-		if (dropoffCityId > 0)
-			dropOffLocation.setCityId(dropoffCityId);
-		
-		if ( StringUtils.isNotEmpty(aptCode)) {
-			pickUpLocation.setAirport(aptCode);
-		}			
-		if ( StringUtils.isNotEmpty(dropOffAptCode))
-			dropOffLocation.setAirport(dropOffAptCode);
-		
-		if ((cityId > 0 || StringUtils.isNotEmpty(aptCode) ) && ( dropoffCityId >0 && StringUtils.isNotEmpty(dropOffAptCode))) {
-		    locationExist = true;		    
-		}
+		Location pickUpLocation = createPickupLocation();
+		Location dropOffLocation = createDropoffLocation(pickUpLocation);
 		
 		ti.setPickUpLocation(pickUpLocation);
 		ti.setDropOffLocation(dropOffLocation);
 		
-		Calendar pickupDate = ModelProvider.INSTANCE.pickupDateTime;
-		Calendar dropoffDate = ModelProvider.INSTANCE.dropoffDateTime;
+		LocalDateTime pickupDate = ModelProvider.INSTANCE.pickupDateTime;
+		LocalDateTime dropoffDate = ModelProvider.INSTANCE.dropoffDateTime;
 		
 		DayAndHour dh = createDate(pickupDate);
 		ti.setPickUpTime(dh);
@@ -86,15 +62,57 @@ public class CreateVehicleRequestUtils {
 		OfferFilter offerFilter = createFilter();
 		if (offerFilter != null )
 			request.setFilter(offerFilter);
-		
-		if ( !locationExist) {
-			createStationLocations(request);
-		}
-		
 
 		return request;
 
 	}
+
+	private static Location createPickupLocation() {
+		Location pickupLocation = new Location();
+
+		String aptCode = StringUtils.trimToEmpty(ModelProvider.INSTANCE.airport);
+		long cityId = ModelProvider.INSTANCE.cityId;
+		
+		if ( ModelProvider.INSTANCE.locationTypeRequest == LocationTypeRequest.Airport) {
+			pickupLocation.setAirport(aptCode);
+		}
+		else if ( ModelProvider.INSTANCE.locationTypeRequest == LocationTypeRequest.City) {
+			pickupLocation.setCityId(cityId);
+		}
+		else if ( ModelProvider.INSTANCE.locationTypeRequest == LocationTypeRequest.StationFilter) {
+			
+		}
+		
+		
+		return pickupLocation;
+	}
+
+	private static Location createDropoffLocation(Location pickupLocation) {
+		Location dropoffLocation = new Location();
+
+		String aptCode = StringUtils.trimToEmpty(ModelProvider.INSTANCE.dropoffAirport);
+		long cityId = ModelProvider.INSTANCE.dropoffCityId;
+		
+		if ( ModelProvider.INSTANCE.locationTypeRequest == LocationTypeRequest.Airport) {
+			if ( StringUtils.isNotEmpty(aptCode))
+				dropoffLocation.setAirport(aptCode);
+			else
+				dropoffLocation.setAirport(pickupLocation.getAirport());
+		}
+		else if ( ModelProvider.INSTANCE.locationTypeRequest == LocationTypeRequest.City) {
+			if ( cityId > 0)
+				dropoffLocation.setCityId(cityId);
+			else
+				dropoffLocation.setCityId(pickupLocation.getGeo() != null ? pickupLocation.getGeo().getCity() : -1);
+		}
+		else if ( ModelProvider.INSTANCE.locationTypeRequest == LocationTypeRequest.StationFilter) {
+			
+		}
+		
+		
+		return dropoffLocation;
+	}
+	
 
 	private static void createStationLocations(VehicleRequest request) {
 
@@ -199,12 +217,14 @@ public class CreateVehicleRequestUtils {
 	}
 
 
-	private static DayAndHour createDate(Calendar cal) {
+	private static DayAndHour createDate(LocalDateTime pickupDate) {
+		
 		String sday = String.format("%4d-%02d-%02d",
-				cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1,
-				cal.get(Calendar.DAY_OF_MONTH));
+				pickupDate.getYear(), pickupDate.getMonth().getValue(),
+				pickupDate.getDayOfMonth());
+		
 		String sTime = String.format("%02d:%02d",
-				cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+				pickupDate.getHour(), pickupDate.getMinute());
 
 		DayAndHour dh = new DayAndHour();
 		dh.setDate(sday);

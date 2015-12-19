@@ -10,6 +10,7 @@ import java.io.StringWriter;
 import java.net.URL;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.log4j.Logger;
 
 import com.bpcs.bpcs_tester.model.json.Hit;
 import com.bpcs.bpcs_tester.model.json.HitGroup;
@@ -20,6 +21,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonUtils {
+	private static Logger logger = Logger.getLogger(JsonUtils.class);
+
 	
 	public static <T> T createResponseClassFromJson(String jsonString, Class<T> claszz)
 			throws JsonParseException, JsonMappingException, IOException {
@@ -75,10 +78,26 @@ public class JsonUtils {
 		return null;
 	}
 	
-	public static String createDummyResponse(String file) throws IOException {
-		String RESOURCE_FOLDER= "/resource/json";
+	public String createDummyResponse(String file) throws IOException {
+		String RESOURCE_FOLDER= "json";
 		String resource = RESOURCE_FOLDER+ "/"+file;
-		return  new XmlUtils().readResource(resource);
+		return  readResource(resource);
+	}
+
+	private String readResource(String file) {
+		try {
+			InputStream is = this.getClass().getClassLoader()
+					.getResourceAsStream(file);
+			StringWriter writer = new StringWriter();
+			IOUtils.copy(is, writer, "utf-8");
+			String result = writer.toString();
+			logger.info("dummy response "+ file + " " + result);
+			return result;
+		} catch (IOException e) {
+			logger.error(e.getMessage(),e);
+		}
+		return null;
+
 	}
 
 	

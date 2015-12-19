@@ -39,8 +39,8 @@ public class PickupDateControl extends InputDateControl {
 				ApplicationProperties.getInstance().setPickupDate(date);
 				System.out.println("Selected Pickup Date: " + date);
 				
-				ModelProvider.INSTANCE.pickupDateTimex = 
-						LocalDateTime.of(date.getYear(), date.getMonth(), date.getDayOfMonth(),ModelProvider.INSTANCE.pickupDateTimex.getHour(), ModelProvider.INSTANCE.pickupDateTimex.getMinute());
+				ModelProvider.INSTANCE.pickupDateTime = 
+						LocalDateTime.of(date.getYear(), date.getMonth(), date.getDayOfMonth(),ModelProvider.INSTANCE.pickupDateTime.getHour(), ModelProvider.INSTANCE.pickupDateTime.getMinute());
 
 			}
 		};
@@ -52,10 +52,10 @@ public class PickupDateControl extends InputDateControl {
 		System.out.println("Selected Pickup Time: " + text);
 		ApplicationProperties.getInstance().setPickupTime(text);
 		LocalTime lt = LocalTime.parse(text);
-		ModelProvider.INSTANCE.pickupDateTimex = 
-				LocalDateTime.of(ModelProvider.INSTANCE.pickupDateTimex.getYear(), 
-						ModelProvider.INSTANCE.pickupDateTimex.getMonth(), 
-						ModelProvider.INSTANCE.pickupDateTimex.getDayOfMonth(),
+		ModelProvider.INSTANCE.pickupDateTime = 
+				LocalDateTime.of(ModelProvider.INSTANCE.pickupDateTime.getYear(), 
+						ModelProvider.INSTANCE.pickupDateTime.getMonth(), 
+						ModelProvider.INSTANCE.pickupDateTime.getDayOfMonth(),
 						lt.getHour(), 
 						lt.getMinute());
 		

@@ -55,6 +55,8 @@ public class VehicleHttpService {
 	private URI getServerURI(String param ) throws URISyntaxException {
 		
 		URI uri = ModelProvider.INSTANCE.serverUrl;
+		if ( uri == null)
+			uri = new URI("localhost");
 
 		logger.info("VehicleHttpService URI : = "+uri.toString());
 		return uri;
@@ -65,10 +67,9 @@ public class VehicleHttpService {
 		this.httpClient = gisHttpClientInstance;
 	}
 
-	public VehicleResponse getOffers(VehicleRequest vehicleRequest, boolean dummy, int pageSize) {
+	public VehicleResponse getOffers(VehicleRequest vehicleRequest, boolean dummy, int pageSize) throws Exception {
 
-		try {
-			
+		
 //			URI uri = new URI(TaskProperties.getTaskProperties().getServerProperty()+
 //					SUNNY_VEHICLE_REQUEST_PARAM+String.valueOf(pageSize));
 			
@@ -81,7 +82,7 @@ public class VehicleHttpService {
 			
 			dummy = ApplicationProperties.getInstance().isDummy();
 			if ( dummy)
-				response = JsonUtils.createDummyResponse("Sunny_PMI_VehicleResponseRatingView");
+				response = new JsonUtils().createDummyResponse("Sunny_PMI_VehicleResponseRatingView");
 			else
 				response =  httpClient.startPostRequestAsJson(uri, request);
 			
@@ -92,11 +93,6 @@ public class VehicleHttpService {
 			if (response != null ) 
 				return JsonUtils.createResponseClassFromJson(response, VehicleResponse.class);
 			
-		} catch ( IOException e) {
-			logger.error(e.getMessage(),e);
-		} catch (URISyntaxException e) {
-			logger.error(e);
-		}
 		return null;
 	}
 	
@@ -110,7 +106,7 @@ public class VehicleHttpService {
 				return  JsonUtils.createResponseClassFromJson(response, VehicleResponse.class);
 			}
 			else {
-				String response = JsonUtils.createDummyResponse("SunnyVehicleResponsePage2");
+				String response = new JsonUtils().createDummyResponse("SunnyVehicleResponsePage2");
 				return  JsonUtils.createResponseClassFromJson(response, VehicleResponse.class);
 			}
 			
@@ -244,7 +240,7 @@ public class VehicleHttpService {
 
 		try {
 			
-			String response = JsonUtils.createDummyResponse("DummyJoiVehicleResponse.json");
+			String response = new JsonUtils().createDummyResponse("DummyJoiVehicleResponse.json");
 			
 			logger.info("response = "+response);
 			
@@ -376,7 +372,7 @@ public class VehicleHttpService {
 				
 			}
 			else {
-				String response = JsonUtils.createDummyResponse("DummyJoiGetOfferResponse.json");
+				String response = new JsonUtils().createDummyResponse("DummyJoiGetOfferResponse.json");
 				return  JsonUtils.createResponseClassFromJson(response, OfferInformation.class);
 			}
 			
@@ -676,7 +672,7 @@ public class VehicleHttpService {
 			
 			boolean dummy = ApplicationProperties.getInstance().isDummy();
 			if ( dummy)
-				response = JsonUtils.createDummyResponse("SunnyVerifyResponse1.json");
+				response = new JsonUtils().createDummyResponse("SunnyVerifyResponse1.json");
 			else
 				response =  httpClient.sendGetRequest(uri);
 			

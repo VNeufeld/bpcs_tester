@@ -22,7 +22,15 @@ public class ApplicationProperties {
 	private final String  PICKUP_DATE = "pickupDate"; 
 	private final String  PICKUP_TIME = "pickupTime"; 
 	private final String  DROPOFF_DATE = "dropoffDate"; 
-	private final String  DROPOFF_TIME = "dropoffTime"; 
+	private final String  DROPOFF_TIME = "dropoffTime";
+	
+	private final String  PICKUP_CITY = "pickupCity"; 
+	private final String  DROPOFF_CITY = "dropoffCity"; 
+	private final String  PICKUP_APT = "pickupApt"; 
+	private final String  DROPOFF_APT = "dropoffApt"; 
+
+	private final String  SERVER_URL = "serverUrl"; 
+	
 
 	private PropertiesConfiguration config = null;
 	private static ApplicationProperties instance = null;
@@ -165,4 +173,56 @@ public class ApplicationProperties {
 		config.setProperty(DROPOFF_TIME, time);
 	}
 
+	public void setDropoffCity(String cityId) {
+		if (cityId != null )
+			config.setProperty(DROPOFF_CITY, cityId.toString());
+	}
+	public String getDropoffCity() {
+		String prop = config.getString(DROPOFF_CITY);
+		if (prop != null )
+			return prop;
+		return "";
+	}
+
+	public void setPickupCity(String cityId) {
+		if (cityId != null )
+			config.setProperty(PICKUP_CITY, cityId.toString());
+	}
+	public String getPickupCity() {
+		String prop = config.getString(PICKUP_CITY);
+		if (prop != null )
+			return prop;
+		return "";
+	}
+
+	public void setDropoffApt(String apt) {
+		config.setProperty(DROPOFF_APT, apt);
+	}
+	public String getDropoffApt() {
+		String prop = config.getString(DROPOFF_APT);
+		if (prop != null )
+			return prop;
+		return "";
+	}
+
+	public void setPickupApt(String apt) {
+		config.setProperty(PICKUP_APT, apt);
+	}
+	public String getPickupApt() {
+		String prop = config.getString(PICKUP_APT);
+		if (prop != null )
+			return prop;
+		return "";
+	}
+
+	public void setServerUrl(String text) {
+		config.setProperty(SERVER_URL, text);
+	}
+	public String getServerUrl() {
+		String prop = config.getString(SERVER_URL);
+		if (prop != null )
+			return prop;
+		return "";
+	}
+	
 }

@@ -80,9 +80,12 @@ public class LocationTextElement {
 	
 			});
 			this.editableProperty().setValue(true);
+			this.setText(getDefaultValue());
 		}
 	}
 	protected void saveLocation(String text) {}
+
+	protected String getDefaultValue() {return "0";}
 	
 	public class NumberTextField extends TextField {
 

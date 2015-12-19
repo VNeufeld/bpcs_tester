@@ -42,6 +42,7 @@ import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
 import com.bpcs.bpcs_tester.controls.PickupDateControl;
 import com.bpcs.bpcs_tester.controls.PickupLocationText;
 import com.bpcs.bpcs_tester.controls.TravelTextElement;
+import com.bpcs.bpcs_tester.controls.URLGridControl;
 import com.bpcs.bpcs_tester.controls.URLTextElement;
 import com.bpcs.bpcs_tester.controls.eventshandler.GetOfferEventHandler;
 import com.bpcs.bpcs_tester.model.ModelProvider;
@@ -213,7 +214,7 @@ public class Main extends Application {
 		gridTitlePane.setText("Common2");
 		
 					
-		URLTextElement urlTextElement = new URLTextElement();
+		URLGridControl urlTextElement = new URLGridControl();
 		
 		
 		OperatorSelectComboElement operatorTextElement = new OperatorSelectComboElement();

@@ -1,5 +1,11 @@
 package com.bpcs.bpcs_tester.controls;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import com.bpcs.bpcs_tester.model.ModelProvider;
+import com.bpcs.bpcs_tester.util.ApplicationProperties;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -37,7 +43,7 @@ public class OperatorSelectElement {
 		
 		Label label = new Label("Operator");
 		label.setMinWidth(100);
-		operator = new BasicTextField();
+		operator = new OperatorTextField();
 		
 
 		Button button = new Button("Select");
@@ -65,6 +71,20 @@ public class OperatorSelectElement {
 
 	public TextField getUrlTextField() {
 		return operator;
+	}
+	public class OperatorTextField extends BasicTextField {
+
+		@Override
+		protected void saveLocation(String text) {
+			try {
+				ModelProvider.INSTANCE.serverUrl = new URI(text);
+			} catch (URISyntaxException e) {
+				logger.error(e.getMessage());
+			}
+			ApplicationProperties.getInstance().setServerUrl(text);
+
+		}
+		
 	}
 
 }
