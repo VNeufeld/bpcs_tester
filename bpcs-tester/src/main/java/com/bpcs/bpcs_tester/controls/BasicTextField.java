@@ -2,8 +2,6 @@ package com.bpcs.bpcs_tester.controls;
 
 import org.apache.log4j.Logger;
 
-import com.bpcs.bpcs_tester.services.JsonUtils;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TextField;
@@ -11,10 +9,9 @@ import javafx.scene.control.TextField;
 public abstract class BasicTextField extends TextField {
 	protected Logger logger = Logger.getLogger(getClass());
 
-	public BasicTextField() {
-		this.setPrefWidth(150);
-		this.setMaxWidth(250);
-		this.setMinWidth(150);
+	public BasicTextField(int width) {
+		this.setPrefWidth(width);
+		this.setMinWidth(width);
 		this.focusedProperty().addListener(new ChangeListener<Boolean>() {
 
 			public void changed(ObservableValue<? extends Boolean> arg0,
@@ -26,7 +23,11 @@ public abstract class BasicTextField extends TextField {
 			}
 		});
 		this.editableProperty().setValue(true);
+		this.setText(getDefaultValue());
+
 	}
+
+	protected abstract String getDefaultValue();
 
 	protected abstract void saveLocation(String text);
 

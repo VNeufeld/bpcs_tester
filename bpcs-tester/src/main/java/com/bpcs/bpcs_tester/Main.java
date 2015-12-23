@@ -1,5 +1,18 @@
 package com.bpcs.bpcs_tester;
 
+import org.apache.log4j.Logger;
+
+import com.bpcs.bpcs_tester.controls.DropoffDateControl;
+import com.bpcs.bpcs_tester.controls.DropoffLocationText;
+import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
+import com.bpcs.bpcs_tester.controls.PickupDateControl;
+import com.bpcs.bpcs_tester.controls.PickupLocationText;
+import com.bpcs.bpcs_tester.controls.TravelTextElement;
+import com.bpcs.bpcs_tester.controls.URLGridControl;
+import com.bpcs.bpcs_tester.controls.eventshandler.GetOfferEventHandler;
+import com.bpcs.bpcs_tester.model.ModelProvider;
+import com.bpcs.bpcs_tester.model.json.LocationTypeRequest;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -32,21 +45,6 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import org.apache.log4j.Logger;
-
-import com.bpcs.bpcs_tester.controls.DropoffDateControl;
-import com.bpcs.bpcs_tester.controls.DropoffLocationText;
-import com.bpcs.bpcs_tester.controls.InputDateControl;
-import com.bpcs.bpcs_tester.controls.OperatorSelectComboElement;
-import com.bpcs.bpcs_tester.controls.PickupDateControl;
-import com.bpcs.bpcs_tester.controls.PickupLocationText;
-import com.bpcs.bpcs_tester.controls.TravelTextElement;
-import com.bpcs.bpcs_tester.controls.URLGridControl;
-import com.bpcs.bpcs_tester.controls.URLTextElement;
-import com.bpcs.bpcs_tester.controls.eventshandler.GetOfferEventHandler;
-import com.bpcs.bpcs_tester.model.ModelProvider;
-import com.bpcs.bpcs_tester.model.json.LocationTypeRequest;
 
 public class Main extends Application {
 	private static Logger logger = Logger.getLogger(Main.class);	

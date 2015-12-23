@@ -68551,3 +68551,71 @@ java.lang.NullPointerException
 19 Dez 2015 21:15:29,478 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
 19 Dez 2015 21:15:29,479 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
 19 Dez 2015 21:15:29,479 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:22:57,822 INFO  [main] [Main]  Start 
+20 Dez 2015 13:22:58,016 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:22:58,016 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:22:58,020 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:22:58,021 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:22:58,021 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:23:30,560 INFO  [main] [Main]  Start 
+20 Dez 2015 13:23:30,736 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:23:30,737 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:23:30,740 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:23:30,741 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:23:30,741 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:25:09,735 INFO  [main] [Main]  Start 
+20 Dez 2015 13:25:09,902 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:25:09,902 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:25:09,906 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:25:09,906 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:25:09,906 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:26:38,993 INFO  [main] [Main]  Start 
+20 Dez 2015 13:26:39,167 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:26:39,167 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:26:39,171 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:26:39,172 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:26:39,172 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:27:02,400 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : localhost:8080/joi
+20 Dez 2015 13:27:15,461 INFO  [main] [Main]  Start 
+20 Dez 2015 13:27:15,631 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:27:15,632 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:27:15,635 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:27:15,636 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:27:15,636 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:27:31,621 INFO  [main] [Main]  Start 
+20 Dez 2015 13:27:31,794 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:27:31,795 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:27:31,798 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:27:31,799 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:27:31,799 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:34:38,389 INFO  [main] [Main]  Start 
+20 Dez 2015 13:34:38,556 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:34:38,557 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:34:38,560 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:34:38,561 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:34:38,561 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:42:58,990 INFO  [main] [Main]  Start 
+20 Dez 2015 13:42:59,164 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:42:59,164 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:42:59,168 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:42:59,169 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:42:59,169 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:42:59,203 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : localhost:8080/joi
+20 Dez 2015 13:42:59,203 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : localhost:8080/joi
+20 Dez 2015 13:43:15,739 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : http:localhost:8080/joi
+20 Dez 2015 13:43:24,885 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : http://localhost:8080/joi
+20 Dez 2015 13:43:35,442 INFO  [main] [Main]  Start 
+20 Dez 2015 13:43:35,605 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:43:35,605 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:43:35,609 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:43:35,610 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:43:35,610 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:43:35,644 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : http://localhost:8080/joi
+20 Dez 2015 13:43:35,644 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : http://localhost:8080/joi
+20 Dez 2015 13:44:12,025 INFO  [main] [Main]  Start 
+20 Dez 2015 13:44:12,191 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] FileName set to bpcs.test.app.properties
+20 Dez 2015 13:44:12,192 DEBUG [JavaFX Application Thread] [PropertiesConfiguration] Base path set to C:\Users\Valeri
+20 Dez 2015 13:44:12,195 DEBUG [JavaFX Application Thread] [ConfigurationUtils] ConfigurationUtils.locate(): base is C:\Users\Valeri, name is bpcs.test.app.properties
+20 Dez 2015 13:44:12,196 DEBUG [JavaFX Application Thread] [DefaultFileSystem] Could not locate file bpcs.test.app.properties at C:\Users\Valeri: unknown protocol: c
+20 Dez 2015 13:44:12,196 DEBUG [JavaFX Application Thread] [ConfigurationUtils] Loading configuration from the path C:\Users\Valeri\bpcs.test.app.properties
+20 Dez 2015 13:44:12,230 INFO  [JavaFX Application Thread] [URLGridControl$URLTextField]  set server url : http://localhost:8080/joi
